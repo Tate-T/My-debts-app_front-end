@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import DebtsList from '../../components/DebtsList/DebtsList';
-import fetches from '../services/debtsAPI';
+import fetches from '../../services/debtsAPI';
 import s from './MyDebtsPage.module.scss';
 
 export default function MyDebtsPage() {

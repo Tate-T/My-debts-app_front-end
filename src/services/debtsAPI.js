@@ -7,11 +7,11 @@ async function fetchWithErrorHandling(url = '') {
         : Promise.reject(new Error('Not found'));
 }
 
-function fetchMovies() {
+function addDebtApi() {
     return fetchWithErrorHandling(`${BASE_URL}/`)
 }
 
-function fetchDebt(query) {
+function fetchDebts(query) {
     return fetchWithErrorHandling(`${BASE_URL}/`)
 }
 
@@ -19,6 +19,6 @@ function fetchDebtDetail(debt_id) {
     return fetchWithErrorHandling(`${BASE_URL}/`)
 }
 
-const fetches = { fetchMovies, fetchDebt, fetchDebtDetail }
+const fetches = { addDebtApi, fetchDebts, fetchDebtDetail }
 
 export default fetches

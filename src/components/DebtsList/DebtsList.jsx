@@ -8,6 +8,9 @@ const DebtsList = ({ debts }) => {
         <li key={debt.id} className={s.debtCard}>
           <div className={s.titleBtnDirection}>
             <h2 className={s.debtTitle}>{debts.title}</h2>
+            <button type="button" className={s.debtBtn}>
+              &plus; Extra payment
+            </button>
             <NavLink
               to="/notify"
               className={s.debtBtn}
