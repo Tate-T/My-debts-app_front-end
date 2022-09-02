@@ -32,18 +32,33 @@ padding: 0;
 }
 
 .debtBtn {
+    display: inline-block;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.33;
+    text-transform: capitalize;
     text-align: center;
-    align-items: center;
     padding: 8px 12px 8px 8px;
     gap: 4px;
     color: #FFFFFF;
     background-color: #2CB7B0;
     border-radius: 4px;
-    margin-left: 10px;
+    display: flex;
+    align-items: center;
 }
 
-.debtBtn::before {
-    background-image: url("../../images/Icon.svg");
+
+.debtBtn:hover, .debtBtn:focus, .bell:hover, .bell:focus { 
+    background-color: #209D97;
+    fill: #209D97;
+}
+
+.bell {
+    cursor: pointer;
+    margin-right: 4px;
+    fill: #2CB7B0;
 }
 
 .debterName {

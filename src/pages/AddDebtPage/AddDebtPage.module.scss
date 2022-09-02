@@ -11,6 +11,11 @@
     margin-bottom: 40px;
 }
 
+.navLink:hover, .navLink:focus {
+    color: #209D97;
+    cursor: pointer;
+}
+
 .mainTitle {
     margin: 0;
     font-family: 'Inter';
@@ -77,4 +82,9 @@ padding-left: 12px;
     padding: 12px 128px;
     gap: 10px;
     margin-top: 40px;
+ }
+
+ .btn:hover, .btn:focus {
+    background-color: #209D97;
+    cursor: pointer;
  }

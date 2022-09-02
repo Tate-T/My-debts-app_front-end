@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { ReactComponent as Bell } from '../../images/bell.svg';
 import s from './DebtsList.module.scss';
 
 const DebtsList = ({ debts }) => {
@@ -16,6 +17,7 @@ const DebtsList = ({ debts }) => {
               className={s.debtBtn}
               activeClassName="activeLink"
             >
+              <Bell className={s.bell} />
               Notify
             </NavLink>
           </div>
@@ -41,6 +43,7 @@ const DebtsList = ({ debts }) => {
             className={s.debtBtn}
             activeClassName="activeLink"
           >
+            <Bell className={s.bell} />
             Notify
           </NavLink>
         </div>
@@ -63,6 +66,7 @@ const DebtsList = ({ debts }) => {
             className={s.debtBtn}
             activeClassName="activeLink"
           >
+            <Bell className={s.bell} />
             Notify
           </NavLink>
         </div>
@@ -85,6 +89,7 @@ const DebtsList = ({ debts }) => {
             className={s.debtBtn}
             activeClassName="activeLink"
           >
+            <Bell className={s.bell} />
             Notify
           </NavLink>
         </div>
