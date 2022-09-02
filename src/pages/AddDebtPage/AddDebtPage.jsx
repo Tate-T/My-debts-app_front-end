@@ -49,7 +49,7 @@ export default function AddDebtPage() {
             <input type="text" placeholder="Enter amount" className={s.input} />
           </label>
         </div>
-        <button type="sunbmit" className={s.btn}>
+        <button type="submit" className={s.btn}>
           Add debt
         </button>
       </form>

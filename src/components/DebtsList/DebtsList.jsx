@@ -3,7 +3,7 @@ import { ReactComponent as Bell } from '../../images/bell.svg';
 import { ReactComponent as Plus } from '../../images/plus.svg';
 import s from './DebtsList.module.scss';
 
-const DebtsList = ({ debts }) => {
+const DebtsList = ({ debts, isOpenModal }) => {
   return (
     <ul className={s.debtsList}>
       {debts.map(debt => (
