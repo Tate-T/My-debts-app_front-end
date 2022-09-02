@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as Bell } from '../../images/bell.svg';
+import { ReactComponent as Plus } from '../../images/plus.svg';
 import s from './DebtsList.module.scss';
 
 const DebtsList = ({ debts }) => {
@@ -10,7 +11,7 @@ const DebtsList = ({ debts }) => {
           <div className={s.titleBtnDirection}>
             <h2 className={s.debtTitle}>{debts.title}</h2>
             <button type="button" className={s.debtBtn}>
-              &plus; Extra payment
+              <Plus className={s.bell} /> Extra payment
             </button>
             <NavLink
               to="/notify"
@@ -38,6 +39,9 @@ const DebtsList = ({ debts }) => {
       <li className={s.debtCard}>
         <div className={s.titleBtnDirection}>
           <h2 className={s.debtTitle}>Car loan</h2>
+          <button type="button" className={s.debtBtn}>
+            <Plus className={s.bell} /> Extra payment
+          </button>
           <NavLink
             to="/notify"
             className={s.debtBtn}
@@ -61,6 +65,9 @@ const DebtsList = ({ debts }) => {
       <li className={s.debtCard}>
         <div className={s.titleBtnDirection}>
           <h2 className={s.debtTitle}>Car loan</h2>
+          <button type="button" className={s.debtBtn}>
+            <Plus className={s.bell} /> Extra payment
+          </button>
           <NavLink
             to="/notify"
             className={s.debtBtn}
@@ -84,6 +91,9 @@ const DebtsList = ({ debts }) => {
       <li className={s.debtCard}>
         <div className={s.titleBtnDirection}>
           <h2 className={s.debtTitle}>Car loan</h2>
+          <button type="button" className={s.debtBtn}>
+            <Plus className={s.bell} /> Extra payment
+          </button>
           <NavLink
             to="/notify"
             className={s.debtBtn}
