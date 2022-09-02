@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.';
+const BASE_URL = 'https://api.com';
 
 async function fetchWithErrorHandling(url = '') {
     const response = await fetch(url);
@@ -7,18 +7,14 @@ async function fetchWithErrorHandling(url = '') {
         : Promise.reject(new Error('Not found'));
 }
 
-function addDebtApi() {
-    return fetchWithErrorHandling(`${BASE_URL}/`)
+export const addDebtApi = () => {
+    return fetchWithErrorHandling(`${BASE_URL}/add`)
 }
 
-function fetchDebts(query) {
-    return fetchWithErrorHandling(`${BASE_URL}/`)
+export const fetchDebts = (query) => {
+    return fetchWithErrorHandling(`${BASE_URL}/get`)
 }
 
-function fetchDebtDetail(debt_id) {
+export const fetchDebtDetail = (debt_id) => {
     return fetchWithErrorHandling(`${BASE_URL}/`)
 }
-
-const fetches = { addDebtApi, fetchDebts, fetchDebtDetail }
-
-export default fetches
