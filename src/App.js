@@ -11,7 +11,7 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundViews/NotFoundViews.jsx'
 
 function App() {
   return (
-    <Container>
+    // <Container>
 
       <NavLink to="/addadebt" className="navLink" activeClassName="activeLink">AddDebt</NavLink>
       <NavLink exact to="/" className="navLink" activeClassName="activeLink">Go Back</NavLink>
@@ -43,7 +43,7 @@ function App() {
         pauseOnHover
         theme="colored"
       />
-    </Container>
+    // </Container>
   );
 }
 
