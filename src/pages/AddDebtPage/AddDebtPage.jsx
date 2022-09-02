@@ -11,32 +11,40 @@ export default function AddDebtPage() {
       <h2 className={s.mainTitle}>Add a Debt</h2>
       <form className={s.form}>
         <h3 className={s.title}>Borrower</h3>
-        <label htmlFor="">
+        <label htmlFor="" className={s.label}>
           {' '}
-          Borrower name
-          <input type="text" placeholder="Enter name" />
+          Borrower name <br />
+          <input type="text" placeholder="Enter name" className={s.input} />
         </label>
-        <label htmlFor="">
-          Borrower phone
-          <input type="text" placeholder="Enter phone number" />
-        </label>
-
+        <br />
+        <label htmlFor="" className={s.label}>
+          Borrower phone <br />
+          <input
+            type="text"
+            placeholder="Enter phone number"
+            className={s.input}
+          />
+        </label>{' '}
+        <br />
         <h3 className={s.title}>Debt</h3>
-        <label htmlFor="">
-          Debt name
-          <input type="text" placeholder="Enter name" />
-        </label>
-        <label htmlFor="">
-          Outstanding amount
-          <input type="text" placeholder="Enter amount" />
-        </label>
-        <label htmlFor="">
-          Interest rate
-          <input type="text" placeholder="Enter" />
-        </label>
-        <label htmlFor="">
-          Minimal payment
-          <input type="text" placeholder="Enter amount" />
+        <label htmlFor="" className={s.label}>
+          Debt name <br />
+          <input type="text" placeholder="Enter name" className={s.input} />
+        </label>{' '}
+        <br />
+        <label htmlFor="" className={s.label}>
+          Outstanding amount <br />
+          <input type="text" placeholder="Enter amount" className={s.input} />
+        </label>{' '}
+        <br />
+        <label htmlFor="" className={s.label}>
+          Interest rate <br />
+          <input type="text" placeholder="Enter" className={s.input} />
+        </label>{' '}
+        <br />
+        <label htmlFor="" className={s.label}>
+          Minimal payment <br />
+          <input type="text" placeholder="Enter amount" className={s.input} />
         </label>
         <button type="sunbmit" className={s.btn}>
           Add debt
