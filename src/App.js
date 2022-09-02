@@ -1,6 +1,6 @@
 import './App.css';
 import { lazy, Suspense } from 'react';
-import { Switch, NavLink, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -13,9 +13,6 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundViews/NotFoundViews.jsx'
 function App() {
   return (
     <Container>
-
-      <NavLink to="/addadebt" className="navLink" activeClassName="activeLink">AddDebt</NavLink>
-      <NavLink exact to="/" className="navLink" activeClassName="activeLink">Go Back</NavLink>
 
       <Suspense fallback={<h1>Loading...</h1>}>
         <Switch>
@@ -35,7 +32,9 @@ function App() {
             <NotFoundPage />
           </Route>
         </Switch>
+
       </Suspense>
+
       <ToastContainer
         position="top-center"
         autoClose={3000}

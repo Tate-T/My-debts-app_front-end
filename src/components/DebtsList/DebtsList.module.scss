@@ -1,0 +1,76 @@
+.debtsList {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.debtCard {
+    background-color: #F6F8FA;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.debtCard:last-child{
+    margin-bottom: 0px;
+}
+
+.titleBtnDirection {
+    display:flex;
+}
+
+.debtTitle {
+    margin: 0;
+    margin-right: auto;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    text-transform: capitalize;
+    color: #111C1F;
+}
+
+.debtBtn {
+    text-align: center;
+    align-items: center;
+    padding: 8px 12px 8px 8px;
+    gap: 4px;
+    color: #FFFFFF;
+    background-color: #2CB7B0;
+    border-radius: 4px;
+}
+
+.debtBtn::before {
+    background-image: url("../../images/Icon.svg");
+}
+
+.debterName {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    text-transform: capitalize;
+    color: #111C1F;
+}
+
+.debtDescr {
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 1.29;
+text-transform: capitalize;
+color: #5A676A;
+}
+
+.debtAmount {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.29;
+    text-transform: capitalize;
+    color: #111C1F;
+}
