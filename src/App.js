@@ -4,6 +4,7 @@ import { Switch, NavLink, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const Container = lazy(() => import('./components/Container/Container.jsx'));
 const MyDebtsPage = lazy(() => import('./pages/MyDebtsPage/MyDebtsPage.jsx'));
 const AddDebtPage = lazy(() => import('./pages/AddDebtPage/AddDebtPage.jsx'));
 const DebtDetailsPage = lazy(() => import('./pages/DebtDetailsPage/DebtDetailsPage.jsx'));
@@ -11,7 +12,7 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundViews/NotFoundViews.jsx'
 
 function App() {
   return (
-    // <Container>
+    <Container>
 
       <NavLink to="/addadebt" className="navLink" activeClassName="activeLink">AddDebt</NavLink>
       <NavLink exact to="/" className="navLink" activeClassName="activeLink">Go Back</NavLink>
@@ -43,7 +44,7 @@ function App() {
         pauseOnHover
         theme="colored"
       />
-    // </Container>
+    </Container>
   );
 }
 
