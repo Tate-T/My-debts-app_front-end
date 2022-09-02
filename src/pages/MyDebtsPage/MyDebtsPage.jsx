@@ -31,7 +31,7 @@ export default function MyDebtsPage() {
       </div>
       <DebtsList debts={debts} isOpenModal={isOpenModal} />
 
-      {/* {isOpenModal && <Modal onClose={closeModal} />} */}
+      {isOpenModal && <Modal onClose={closeModal} />}
     </div>
   );
 }
