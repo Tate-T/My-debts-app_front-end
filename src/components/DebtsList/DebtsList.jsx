@@ -27,11 +27,7 @@ const DebtsList = ({
         <li key={debt.id} className={s.debtCard}>
           <div className={s.titleBtnDirection}>
             <h2 className={s.debtTitle}>{debts.title}</h2>
-            <button
-              type="button"
-              className={s.debtBtn}
-              onClick={notifyMessage()}
-            >
+            <button type="button" className={s.debtBtn} onClick={notifyMessage}>
               <Plus className={s.bell} /> Extra payment
             </button>
             <button className={s.debtBtn}>
@@ -42,14 +38,15 @@ const DebtsList = ({
           <h3 className={s.debterName}>{debts.name}</h3>
           <p className={s.debtDescr}>
             Outstanding amount:{' '}
-            <span className={s.debtAmount}>{debts.amount}</span>
+            <span className={s.debtAmount}>`${debts.amount}`</span>
           </p>
           <p className={s.debtDescr}>
             Minimal payment:{' '}
-            <span className={s.debtAmount}>{debts.payment}</span>
+            <span className={s.debtAmount}>`${debts.payment}/month`</span>
           </p>
           <p className={s.debtDescr}>
-            Interest rate: <span className={s.debtAmount}>{debts.rate}</span>
+            Interest rate:{' '}
+            <span className={s.debtAmount}>`${debts.rate}%`</span>
           </p>
         </li>
       ))}
