@@ -2,8 +2,8 @@ import axios from 'axios';
 
 const baseUrl = process.env.BASE_URL;
 
-// axios.defaults.baseUrl = 'https://debts-app.onrender.com';
-axios.defaults.baseURL = 'http://localhost:3001';
+axios.defaults.baseUrl = 'https://debts-app.onrender.com';
+// axios.defaults.baseURL = 'http://localhost:3001';
 
 export const addDebtApi = (body) => axios.post('/api/debts/add', body);
 
