@@ -2,13 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { addDebt, getDebtsData } from './debtsOperations';
 
 const initialState = {
-    debts: {
-        title: "",
-        name: "",
-        amount: 0,
-        payment: 0,
-        rate: 0
-    },
+    debts: [],
     isLoading: false,
     error: null,
 };
