@@ -8,7 +8,7 @@ import s from './Modal.module.scss';
 
 // const modalRoot = document.querySelector('#modal-root');
 
-const Modal = ({ isOpen, onClose, addRecommendPayment }) => {
+const Modal = ({ closeModal, addRecommendPayment }) => {
   const extraAmountValidation = {
     required: 'Extra Amount is required',
     minLength: {
@@ -37,13 +37,13 @@ const Modal = ({ isOpen, onClose, addRecommendPayment }) => {
 
   const onKeyDown = event => {
     if (event.code === 'Escape') {
-      onClose();
+      closeModal();
     }
   };
 
   const onBackdropClick = event => {
     if (event.currentTarget === event.target) {
-      onClose();
+      closeModal();
     }
   };
 
@@ -65,12 +65,10 @@ const Modal = ({ isOpen, onClose, addRecommendPayment }) => {
   // return createPortal(
   return (
     <div className={s.overlay} onClick={onBackdropClick}>
-      <form
-        className={s.modal}
-        onSubmit={handleSubmit(onSubmit)}
-        isOpen={isOpen}
-      >
-        <Close className={s.close} onClose={onClose} />
+      <form className={s.modal} onSubmit={handleSubmit(onSubmit)}>
+        <button type="button" onClick={() => closeModal()} className={s.close}>
+          <Close />
+        </button>
         <h2 className={s.title}>Recommend extra payment</h2>
         <label htmlFor="" className={s.label}>
           Extra payment amount <br />
@@ -81,7 +79,7 @@ const Modal = ({ isOpen, onClose, addRecommendPayment }) => {
             name="extraPayment"
             {...register('extraPayment', extraAmountValidation)}
           />
-          {errors.extraPayment.message && (
+          {errors.extraPayment && (
             <ErrorMsg message={errors.extraPayment.message} />
           )}
         </label>
