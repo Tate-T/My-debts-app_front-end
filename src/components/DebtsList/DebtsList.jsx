@@ -30,7 +30,7 @@ const DebtsList = ({ debts }) => {
   return (
     <>
       <ul className={s.debtsList}>
-        {debts.map(debt => (
+        {/* {debts.map(debt => (
           <li key={debt.id} className={s.debtCard}>
             <div className={s.titleBtnDirection}>
               <h2 className={s.debtTitle}>{debts.title}</h2>
@@ -55,7 +55,7 @@ const DebtsList = ({ debts }) => {
               Interest rate: <span className={s.debtAmount}>{debts.rate}%</span>
             </p>
           </li>
-        ))}
+        ))} */}
 
         <li className={s.debtCard}>
           <div className={s.titleBtnDirection}>
