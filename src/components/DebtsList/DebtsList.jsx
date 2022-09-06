@@ -6,7 +6,6 @@ import Modal from '../Modal/Modal';
 import s from './DebtsList.module.scss';
 
 const DebtsList = ({ debts }) => {
-  // const { borrowerName, minPayment, amount, name } = debts;
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const toggleModal = () => {
@@ -14,26 +13,22 @@ const DebtsList = ({ debts }) => {
   };
 
   const notifyMessage = () => {
-    // const message = Notify.warning(`Hey ${borrowerName}!
+    const message = Notify.warning(`Hey ${debts.debt.borrowerName}!
 
-    // You have an outstanding amount of ${amount} for ${name}.
+    You have an outstanding amount of ${debts.debt.outstandingAmount} for ${debts.debt.debtName}.
 
-    // Please don't forget to pay your minimum monthly payment of ${minPayment}/month.`);
-    const message = Notify.warning(`Hey ! 
+    Please don't forget to pay your minimum monthly payment of ${debts.debt.minimalPayment}/month.`);
 
-    You have an outstanding amount .
-    
-    Please don't forget to pay your minimum monthly payment /month.`);
     return message;
   };
 
   return (
     <>
       <ul className={s.debtsList}>
-        {/* {debts.map(debt => (
-          <li key={debt.id} className={s.debtCard}>
+        {debts?.map(debt => (
+          <li key={debt.debtName} className={s.debtCard}>
             <div className={s.titleBtnDirection}>
-              <h2 className={s.debtTitle}>{debts.title}</h2>
+              <h2 className={s.debtTitle}>{debt.debtName}</h2>
               <button type="button" className={s.debtBtn} onClick={toggleModal}>
                 <Plus className={s.bell} /> Extra payment
               </button>
@@ -42,65 +37,21 @@ const DebtsList = ({ debts }) => {
                 Notify
               </button>
             </div>
-            <h3 className={s.debterName}>{debts.name}</h3>
+            <h3 className={s.debterName}>{debt.borrowerName}</h3>
             <p className={s.debtDescr}>
               Outstanding amount:
-              <span className={s.debtAmount}>{debts.amount}</span>
+              <span className={s.debtAmount}>{debt.outstandingAmount}</span>
             </p>
             <p className={s.debtDescr}>
               Minimal payment:
-              <span className={s.debtAmount}>{debts.payment}/month</span>
+              <span className={s.debtAmount}>{debt.minimalPayment}/month</span>
             </p>
             <p className={s.debtDescr}>
-              Interest rate: <span className={s.debtAmount}>{debts.rate}%</span>
+              Interest rate: <span className={s.debtAmount}>{debt.rate}%</span>
             </p>
           </li>
-        ))} */}
+        ))}
 
-        <li className={s.debtCard}>
-          <div className={s.titleBtnDirection}>
-            <h2 className={s.debtTitle}>Car loan</h2>
-            <button type="button" className={s.debtBtn} onClick={toggleModal}>
-              <Plus className={s.bell} /> Extra payment
-            </button>
-            <button className={s.debtBtn} onClick={notifyMessage}>
-              <Bell className={s.bell} />
-              Notify
-            </button>
-          </div>
-          <h3 className={s.debterName}>John Doe</h3>
-          <p className={s.debtDescr}>
-            Outstanding amount: <span className={s.debtAmount}>$3452.29</span>
-          </p>
-          <p className={s.debtDescr}>
-            Minimal payment: <span className={s.debtAmount}>$200/month</span>
-          </p>
-          <p className={s.debtDescr}>
-            Interest rate: <span className={s.debtAmount}>6.25%</span>
-          </p>
-        </li>
-        <li className={s.debtCard}>
-          <div className={s.titleBtnDirection}>
-            <h2 className={s.debtTitle}>Car loan</h2>
-            <button type="button" className={s.debtBtn} onClick={toggleModal}>
-              <Plus className={s.bell} /> Extra payment
-            </button>
-            <button className={s.debtBtn} onClick={notifyMessage}>
-              <Bell className={s.bell} />
-              Notify
-            </button>
-          </div>
-          <h3 className={s.debterName}>John Doe</h3>
-          <p className={s.debtDescr}>
-            Outstanding amount: <span className={s.debtAmount}>$3452.29</span>
-          </p>
-          <p className={s.debtDescr}>
-            Minimal payment: <span className={s.debtAmount}>$200/month</span>
-          </p>
-          <p className={s.debtDescr}>
-            Interest rate: <span className={s.debtAmount}>6.25%</span>
-          </p>
-        </li>
         <li className={s.debtCard}>
           <div className={s.titleBtnDirection}>
             <h2 className={s.debtTitle}>Car loan</h2>
