@@ -1,20 +1,23 @@
-const BASE_URL = 'https://api.com';
+import axios from 'axios';
 
-async function fetchWithErrorHandling(url = '') {
-    const response = await fetch(url);
-    return response.ok
-        ? await response.json()
-        : Promise.reject(new Error('Not found'));
-}
+const baseUrl = process.env.BASE_URL;
 
-export const addDebtApi = () => {
-    return fetchWithErrorHandling(`${BASE_URL}/add`)
-}
+axios.defaults.baseUrl = 'https://debts-app.onrender.com';
 
-export const fetchDebts = (query) => {
-    return fetchWithErrorHandling(`${BASE_URL}/get`)
-}
+export const addDebtApi = (body) => axios.get('/api/debts/add', body);
 
-export const fetchDebtDetail = (debt_id) => {
-    return fetchWithErrorHandling(`${BASE_URL}/`)
-}
+export const fetchDebts = () => axios.get('/api/debts');
+
+export const fetchDebtDetail = (body) => axios.get('/api/debts/send', body);
+
+// export const addDebtApi = () => {
+//     return fetchWithErrorHandling(`${BASE_URL}/add`)
+// }
+
+// export const fetchDebts = (query) => {
+//     return fetchWithErrorHandling(`${BASE_URL}/get`)
+// }
+
+// export const fetchDebtDetail = (debt_id) => {
+//     return fetchWithErrorHandling(`${BASE_URL}/`)
+// }
