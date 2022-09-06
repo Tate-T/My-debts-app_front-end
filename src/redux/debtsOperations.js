@@ -5,11 +5,11 @@ import {
     addDebtApi, fetchDebts
 } from '../services/debtsAPI.js';
 
-export const addDebt = createAsyncThunk('debt/add', async (debt, thunkApi) => {
+export const addDebt = createAsyncThunk('debts/addDebt', async (newDebt, thunkApi) => {
     try {
-        const addedDebt = await addDebtApi(debt);
+        const addedDebt = await addDebtApi(newDebt);
         Notify.success(
-            `Your debt information "${debt.name}" is added to list`
+            `Your debt information "${newDebt.name}" is added to list`
         );
         return addedDebt;
     } catch (error) {
@@ -18,7 +18,7 @@ export const addDebt = createAsyncThunk('debt/add', async (debt, thunkApi) => {
 });
 
 export const getDebtsData = createAsyncThunk(
-    '/getData',
+    'debts/getDebtsData',
     async (_, thunkApi) => {
         try {
             const data = await fetchDebts();
@@ -37,7 +37,7 @@ export const getDebtsData = createAsyncThunk(
             //     data.debtData = debtData;
             // }
 
-            return data;
+            return data.data.response;
         } catch (error) {
             return thunkApi.rejectWithValue(error.message);
         }
