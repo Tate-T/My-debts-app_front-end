@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ReactComponent as Bell } from '../../images/bell.svg';
 import { ReactComponent as Plus } from '../../images/plus.svg';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { reminderNotify } from '../../services/debtsAPI';
 import Modal from '../Modal/Modal';
 import s from './DebtsList.module.scss';
 
@@ -19,6 +20,7 @@ const DebtsList = ({ debts }) => {
 
     Please don't forget to pay your minimum monthly payment of ${debts.debt.minimalPayment}/month.`);
 
+    reminderNotify();
     return message;
   };
 
@@ -52,7 +54,7 @@ const DebtsList = ({ debts }) => {
           </li>
         ))}
 
-        <li className={s.debtCard}>
+        {/* <li className={s.debtCard}>
           <div className={s.titleBtnDirection}>
             <h2 className={s.debtTitle}>Car loan</h2>
             <button type="button" className={s.debtBtn} onClick={toggleModal}>
@@ -73,7 +75,7 @@ const DebtsList = ({ debts }) => {
           <p className={s.debtDescr}>
             Interest rate: <span className={s.debtAmount}>6.25%</span>
           </p>
-        </li>
+        </li> */}
       </ul>
 
       {isOpenModal && <Modal closeModal={toggleModal} />}

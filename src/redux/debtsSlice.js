@@ -20,10 +20,10 @@ const debtsSlice = createSlice({
             .addCase(getDebtsData.fulfilled, (state, { payload }) => {
                 state.isLoading = false;
                 state.error = null;
-                state.debts.title = payload.title;
-                state.debts.name = payload.name;
-                state.debts.amount = payload.amount;
-                state.debts.payment = payload.payment;
+                state.debts.debtName = payload.debtName;
+                state.debts.borrowerName = payload.borrowerName;
+                state.debts.outstandingAmount = payload.outstandingAmount;
+                state.debts.minimalPayment = payload.minimalPayment;
                 state.debts.rate = payload.rate;
             })
             .addCase(getDebtsData.rejected, (state, { payload }) => {

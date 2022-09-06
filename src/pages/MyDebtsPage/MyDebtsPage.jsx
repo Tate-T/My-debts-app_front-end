@@ -7,6 +7,8 @@ import s from './MyDebtsPage.module.scss';
 export default function MyDebtsPage() {
   const [debts, setDebts] = useState([]);
 
+  console.log(debts);
+
   useEffect(() => {
     fetchDebts().then(res => setDebts(res.results));
   }, []);
