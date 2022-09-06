@@ -6,7 +6,7 @@ import Modal from '../Modal/Modal';
 import s from './DebtsList.module.scss';
 
 const DebtsList = ({ debts }) => {
-  const { borrowerName, minPayment, amount, name } = debts;
+  // const { borrowerName, minPayment, amount, name } = debts;
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const toggleModal = () => {
@@ -14,12 +14,16 @@ const DebtsList = ({ debts }) => {
   };
 
   const notifyMessage = () => {
-    const message = Notify.warning(`Hey ${borrowerName}! 
+    // const message = Notify.warning(`Hey ${borrowerName}!
 
-    You have an outstanding amount of ${amount} for ${name}.
+    // You have an outstanding amount of ${amount} for ${name}.
+
+    // Please don't forget to pay your minimum monthly payment of ${minPayment}/month.`);
+    const message = Notify.warning(`Hey ! 
+
+    You have an outstanding amount .
     
-    Please don't forget to pay your minimum monthly payment of ${minPayment}/month.`);
-
+    Please don't forget to pay your minimum monthly payment /month.`);
     return message;
   };
 
